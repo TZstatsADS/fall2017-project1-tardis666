@@ -1,0 +1,110 @@
+---
+title: "HW1_ql2273"
+author: "Qingyun Lu"
+date: "2017/09/12"
+---
+
+## 1
+```{r,fig.width = 10, fig.height = 10}
+par(mfrow = c(1, 3),mar = c(1.5, 2.5, 1.5, 2.5), oma = c(1.5, 2.5, 1.5, 2.5), xpd=T)
+pop <- read.csv("StatePop.csv", header = T, as.is = T)
+
+pop$share.19 <- pop$YR1900/sum(pop$YR1900)*100
+pop$share.20 <- pop$YR2000/sum(pop$YR2000)*100
+
+df.19 <- pop[order(pop$share.19),c(1,4)]
+df.20 <- pop[order(pop$share.20),c(1,5)]
+
+sharepop.19 <- df.19$share.19
+sharepop.20 <- df.20$share.20
+
+state.19 <- df.19$STATE
+state.20 <- df.20$STATE
+state.19[51] <- 1900
+state.20[51] <- 2000
+
+
+index1 <- c(1:50)
+index2 <- c()
+state <- as.data.frame(cbind(df.19$STATE,df.20$STATE))
+for(i in 1:50){
+  index2[i] <- which(rank(state$V2)==rank(state$V1)[i])
+}
+
+slope <- (index2-index1)/5
+intercept <- index1
+
+
+bar1 <- barplot(sharepop.19, xlim = c(15,0),horiz = T, border = NA, col = "orange",axes = F, xlab = NA, xaxt="n",yaxt="n", space = 1, width = 15)
+title(main = "Share of Population")
+for(i in 1:4){
+  abline(v=5*(i-1), lty=3, col="light grey")
+}
+text(seq(from=22.5, to=1522.5, by=30),x = -1, labels = state.19, lty=3)
+axis(1, at = c(0,5,10,15), labels = c("0","5","10","15%"), tick = F, line = F)
+
+
+plot(0,xaxt='n',yaxt='n',bty='n',pch='', ylim = c(0,50), xlim = c(0,5))
+for(i in 1:50){
+  abline(a=intercept[i],b=slope[i], col=ifelse(abs(slope[i])>2.2, "dark grey","light grey"))
+}
+title(main = "Change in Rank")
+
+bar2 <- barplot(sharepop.20,xlim = c(0,15), horiz = T, border = NA, col = "orange",axes = F, ylab = " ", xaxt="n",yaxt="n", space = 1, width=15)
+title(main = "Share of Population")
+for(i in 1:4){
+  abline(v=5*(i-1), lty=3, col="light grey")
+}
+text(seq(from=22.5, to=1522.5, by=30), x=-1,labels = state.20, lty=3)
+axis(1, at = c(0,5,10,15), labels = c("0","5","10","15%"), tick = F, line = F)
+
+mtext("A CENTURY OF POPULATION CHANGE: SHARE OF POPULATION IN EACH STATE AND CHANGE IN RANK", side = 3, line = 0, outer = TRUE)
+```
+
+##2
+```{r,fig.width = 10, fig.height = 10}
+new.19 <- cbind(df.19$STATE,as.data.frame(index1))
+new.20 <- cbind(df.20$STATE,as.data.frame(-index2))
+names(new.19) <- c("state","rank")
+names(new.20) <- c("state","rank")
+df <- rbind(new.19,new.20)
+df$year <- rep(c("1900","2000"), each=50)
+
+
+library(ggplot2)
+par(mar = c(1.5, 2.5, 1.5, 2.5), oma = c(1.5, 2.5, 1.5, 2.5), xpd=T)
+ggplot(df, aes(x = state, y = rank, fill = year)) +
+geom_bar(stat = "identity", position = "dodge")
+
+
+```
+
+
+
+
+##3
+```{r}
+###(a)
+library(ggplot2movies)
+data(movies)
+sub_m <- movies[which(is.na(movies$budget)==0), ]
+
+library(ggplot2movies)
+hist(sub_m$budget,main="Histogram of Budget")
+boxplot(sub_m$budget,main="Boxplot of Budget")
+plot(density(sub_m$budget,na.rm=T),main="Density of Budget")
+summary(sub_m$budget)
+```
+
+```{r,fig.width = 3, fig.height = 10}
+###(b)
+subset <- movies[1:10, 7:16]
+subset <- as.matrix(subset)
+par(mfrow = c(10, 1),mar = c(1.5, 2.5, 3, 2.5), oma = c(1.5, 2.5, 3, 2.5), xpd=T)
+for(i in 1:10){
+  data <- as.vector(subset[i,])
+  hist(data,main = movies[i,1])
+}
+
+```
+
