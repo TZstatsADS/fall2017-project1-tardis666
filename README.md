@@ -89,7 +89,7 @@ The emotion of the speech can be simply divided into two parts, positive and neg
 The most positive sentiment speech is made by the first president of United States of America, George Washington. The most negative sentiment speech is given by Warren Harding. We also can see most of the speeches are classified to the positive side.
 
 ### Word Cloud
-![image](figs/wordc)overall.jpg)
+![image](figs/wordc_overall.jpg)
 
 This is the overall word cloud from all speeches. We can see the most frequent words are related to countries and politics such as “government”, “people”, “country”, “freedom”. The strong affirmative words also play important roles such as “must”, “can”, “will”. In the next steps, we will look more details into seperate speeches.
 
