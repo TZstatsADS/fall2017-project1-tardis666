@@ -60,24 +60,24 @@ Besides the length of sentences, the emotion is an interesting part to analyze a
 The plot above shows us how presidents alternate between long and short sentences and how their emotion changes between different sentiments in their speeches. It is interesting to find out those sentences made emotion change as well.
 
   Donald Trump
-1) "No challenge can match the heart and fight and spirit of America."
-2) "God bless you, and God bless America."                            
-3） "America will start winning again, winning like never before."     
-4） "No challenge can match the heart and fight and spirit of America."
-5） "Today's ceremony, however, has very special meaning."             
-6） "America will start winning again, winning like never before."     
-7） "Today's ceremony, however, has very special meaning."             
-8） "God bless you, and God bless America."
+1. "No challenge can match the heart and fight and spirit of America."
+2. "God bless you, and God bless America."                            
+3. "America will start winning again, winning like never before."     
+4. "No challenge can match the heart and fight and spirit of America."
+5. "Today's ceremony, however, has very special meaning."             
+6. "America will start winning again, winning like never before."     
+7. "Today's ceremony, however, has very special meaning."             
+8. "God bless you, and God bless America."
 
   George W Bush
-1） "Abandonment and abuse are not acts of God;"
-2） "God bless you all, and God bless America." 
-3） "Where there is suffering, there is duty."  
-4) "Abandonment and abuse are not acts of God;"
-5) "God bless you all, and God bless America." 
-6) "Abandonment and abuse are not acts of God;"
-7) "Abandonment and abuse are not acts of God;"
-8) "God bless you all, and God bless America."
+1. "Abandonment and abuse are not acts of God;"
+2. "God bless you all, and God bless America." 
+3. "Where there is suffering, there is duty."  
+4. "Abandonment and abuse are not acts of God;"
+5. "God bless you all, and God bless America." 
+6. "Abandonment and abuse are not acts of God;"
+7. "Abandonment and abuse are not acts of God;"
+8. "God bless you all, and God bless America."
 
 For Donald Trump, the emotionally changed sentences are more like to be some inspiring slogans. While for George W Bush, the time he said sentences like “God bless you all” is the point he changed his emotions.
 
