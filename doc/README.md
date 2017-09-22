@@ -1,7 +1,7 @@
 # Project 1: 
 ## ql2273
 ### Introduction
-U.S presidents’ inaugrual speeches are always hot topics after the ending of each presidential election. There are also a large amount of interesting points for text mining in the inaurgrual speeches. In this project, topics about length of sentences, clustering of emotions and wordclound will shown below.
+U.S presidents’ inaugrual speeches are always hot topics after the ending of each presidential election. There are also a large amount of interesting points for text mining in the inaurgrual speeches. In this project, topics about length of sentences, clustering of emotions and wordclound will be shown below.
 
 ### Length of sentences
 The length of speeches and also the length of sentences in the speeches can will show us a brief perception of each speech. I use sentences as units of analysis for all these presidents’ speeches, and generate a plot showing numbers of words in a sentence each president used.
